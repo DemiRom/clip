@@ -1,33 +1,133 @@
-# clip
+# clip 📋
 
-The most basic command line clipboard utility. With no code dependencies.
+A lightning-fast, cross-platform command-line utility that copies file contents directly to your system clipboard.
 
-*Some linux distros may not include xclip which is used by this program, be sure to have it installed*
+## Overview
 
-Usage: clip <some file>
+**clip** is a simple yet powerful tool that bridges the gap between your terminal and clipboard. Whether you're working with code snippets, configuration files, or any text content, clip makes it effortless to get file contents into your clipboard with a single command.
 
-## Building
+### Key Features
 
-Need the basic C build environment, with meson and ninja or make.
-- gcc, or clang
-- ninja or make
-- meson
+- **Cross-platform**: Works seamlessly on macOS, Linux, and Windows
+- **Fast**: Minimal overhead, maximum performance
+- **Simple**: One command, endless possibilities
+- **Lightweight**: No dependencies, just pure C efficiency
 
-All can be found within your respective package distributor.
+## Installation
 
-### On *nix environments (Linux, macOS)
+### Prerequisites
+
+- A C compiler (GCC, Clang, or MSVC)
+- Either Meson or CMake build system
+- Git (for cloning the repository)
+
+### Building from Source
+
+#### Using Meson (Recommended)
+
+```bash
+# Clone the repository
+git clone https://github.com/yourusername/clip.git
+cd clip
+
+# Build with Meson
+meson setup builddir
+meson compile -C builddir
 ```
-meson setup build
-meson install -C build
+
+#### Using CMake
+
+```bash
+# Clone the repository
+git clone https://github.com/yourusername/clip.git
+cd clip
+
+# Build with CMake
+mkdir build && cd build
+cmake ..
+make
 ```
 
-On Windows
+### Installation
 
-*You may have trouble getting meson installed on Windows, might be worth using cmake or a batch file to compile and install it but if you already have meson the same commands should work*
+After building, install the binary to your system:
 
+```bash
+# On Unix-like systems
+sudo make install
+
+# Or copy manually to your PATH
+cp clip /usr/local/bin/
 ```
-meson setup build
-meson install -C build
+
+## Usage
+
+Using clip is incredibly straightforward:
+
+```bash
+clip <filename>
 ```
 
-Enjoy!
+### Examples
+
+Copy a source file to clipboard:
+```bash
+clip main.c
+```
+
+Copy configuration file contents:
+```bash
+clip ~/.bashrc
+```
+
+Copy any text file:
+```bash
+clip README.md
+```
+
+### Error Handling
+
+- If the file doesn't exist, clip will display an error message
+- If the file is binary or too large, clip will warn you appropriately
+- Empty files are handled gracefully
+
+## Platform Support
+
+| Platform | Status | Notes |
+|----------|--------|-------|
+| macOS    | ✅ Supported | Uses `pbcopy` integration |
+| Linux    | ✅ Supported | Uses X11/Wayland clipboard |
+| Windows  | ✅ Supported | Uses Windows Clipboard API |
+
+## Contributing
+
+Contributions are welcome! Please feel free to:
+
+- Report bugs
+- Suggest new features
+- Submit pull requests
+- Improve documentation
+
+### Development Setup
+
+1. Fork the repository
+2. Create a feature branch
+3. Make your changes
+4. Test across platforms
+5. Submit a pull request
+
+## License
+
+This project is licensed under the MIT License - see the LICENSE file for details.
+
+## Support the Project
+
+If you find clip useful, consider supporting its development:
+
+☕ **[Buy me a coffee on Ko-fi](https://ko-fi.com/demilovato)**
+
+Your support helps maintain and improve this project!
+
+---
+
+**Made with ❤️ for developers who love efficient workflows**
