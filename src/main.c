@@ -80,6 +80,12 @@ int main(int argc, char** argv) {
 		return EXIT_FAILURE; //An error has already been printed and the file ptr closed by the get_file size function.
 	}
 
+	// Handle empty files
+	if(file_size == 0) {
+		fprintf(stdout, "File is empty nothing to copy!\n");
+		return EXIT_SUCCESS;
+	}
+
 	char* file_data = (char*)malloc(sizeof(char) * file_size);
 
 	if(fread(file_data, 1, file_size, file_ptr) != file_size) {

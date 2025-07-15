@@ -27,7 +27,7 @@ A lightning-fast, cross-platform command-line utility that copies file contents 
 
 ```bash
 # Clone the repository
-git clone https://github.com/yourusername/clip.git
+git clone https://github.com/demirom/clip.git
 cd clip
 
 # Build with Meson
@@ -39,7 +39,7 @@ meson compile -C builddir
 
 ```bash
 # Clone the repository
-git clone https://github.com/yourusername/clip.git
+git clone https://github.com/demirom/clip.git
 cd clip
 
 # Build with CMake
